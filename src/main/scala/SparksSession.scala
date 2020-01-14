@@ -1,6 +1,6 @@
 import org.apache.spark.sql.SparkSession
 
-object SparkSessions {
+object SparksSession {
   val spark: SparkSession = SparkSession.builder
     .appName("SparkSessionExample")
     .master("local[4]")

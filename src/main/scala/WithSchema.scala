@@ -8,13 +8,13 @@ import org.apache.spark.sql.types.StructType
 
 object WithSchema {
 
-  case class SchemaCSVCities(dateTime: Timestamp, ip: String)
+  private class SchemaCSVCities(dateTime: Timestamp, ip: String)
 
   private val _path : String = ".\\src\\main\\resources\\time_and_ip.csv"
   private val _schema: StructType = Encoders.product[SchemaCSVCities].schema
 
 
-  val citiesDF: DataFrame = SparkSessions.spark.read
+  val citiesDF: DataFrame = SparksSession.spark.read
     .format("csv")
     .option("timestampFormat", "yyyy-MM-dd HH:mm:ss,SSS")
     .option("delimiter", "|")

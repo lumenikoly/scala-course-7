@@ -4,7 +4,7 @@ import org.apache.spark.sql.DataFrame
 object CSVDataSource {
   private val _path : String = ".\\src\\main\\resources\\grades.csv"
 
-  val gradesDF: DataFrame = SparkSessions.spark.read
+  val gradesDF: DataFrame = SparksSession.spark.read
     .option("header", "true")
     .option("inferSchema", "true")
     .csv(_path)

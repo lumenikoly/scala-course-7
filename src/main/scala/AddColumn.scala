@@ -2,7 +2,7 @@ import org.apache.spark.sql.{DataFrame, RelationalGroupedDataset}
 import org.apache.spark.sql.functions._
 
 object AddColumn {
-  import SparkSessions.spark.implicits._
+  import SparksSession.spark.implicits._
   private val _data: DataFrame = Seq(
     (0, "2016-01-1"),
     (1, "2016-02-2"),
