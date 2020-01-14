@@ -8,7 +8,7 @@ import org.apache.spark.sql.types.StructType
 
 object WithSchema {
 
-  private class SchemaCSVCities(dateTime: Timestamp, ip: String)
+  private case class SchemaCSVCities(dateTime: Timestamp, ip: String)
 
   private val _path : String = ".\\src\\main\\resources\\time_and_ip.csv"
   private val _schema: StructType = Encoders.product[SchemaCSVCities].schema
